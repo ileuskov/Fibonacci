@@ -1,13 +1,17 @@
-package Fibonacci;
+package fibonacci;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
 
         int count = 5;
         fibonacci(5);
 
         System.out.println("***");
         int[] fibonacci_series = fibonacci_recursion(10);
+
         for (int i = 0; i < fibonacci_series.length; i++){
             System.out.print("" + fibonacci_series[i] + " | ");
         }
@@ -16,8 +20,6 @@ public class Main {
         System.out.println(sum_of_fibonacci(5));
 
 
-
-        // 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21
     }
 
     public static void fibonacci(int count){
@@ -34,7 +36,7 @@ public class Main {
     }
 
     public static int[] fibonacci_recursion(int count) {
-        int number[] = new int[count];
+        int[] number = new int[count];
 
         for (int i = 0; i < count; i++){
             number[i] = fibonacci_recursion_helper(i);
