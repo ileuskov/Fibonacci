@@ -5,11 +5,15 @@ public class Main {
 
         int count = 5;
         fibonacci(5);
+
         System.out.println("***");
         int[] fibonacci_series = fibonacci_recursion(10);
         for (int i = 0; i < fibonacci_series.length; i++){
             System.out.print("" + fibonacci_series[i] + " | ");
         }
+
+        System.out.println("***");
+        System.out.println(sum_of_fibonacci(5));
 
 
 
@@ -48,7 +52,22 @@ public class Main {
         }
     }
 
-    // add a sum of n first fibonacci numbers
+    public static int sum_of_fibonacci(int count){
+        int first = 0, second = 1, sum = first + second;
+
+        if (count <= 1){
+            return 0;
+        }
+
+        for (int i = 2; i<count; i++){
+            int temp = first + second;
+            first = second;
+            second = temp;
+            sum += temp;
+        }
+        return sum;
+    }
+
 }
 
 
